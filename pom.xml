@@ -3,10 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.autumncode.books.hibernate</groupId>
-    <artifactId>hibernate-6-parent</artifactId>
+    <groupId>com.baransonmez.course.javapersistence</groupId>
+    <artifactId>java-persistence</artifactId>
     <packaging>pom</packaging>
-    <version>5.0</version>
+    <version>1.0</version>
     <modules>
         <module>getting-started</module>
     </modules>
@@ -15,16 +15,16 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <testng.version>7.4.0</testng.version>
-        <hibernate.core.version>6.0.0.Alpha8</hibernate.core.version>
-        <h2.version>1.4.200</h2.version>
+        <hibernate.core.version>6.1.1.Final</hibernate.core.version>
+        <h2.version>2.1.210</h2.version>
         <logback.version>1.2.3</logback.version>
-        <lombok.version>1.18.18</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
         <hibernate.validator.version>
-            6.2.0.Final
+            7.0.4.Final
         </hibernate.validator.version>
         <javax.el-api.version>3.0.0</javax.el-api.version>
-        <ignite.version>2.10.0</ignite.version>
-        <jackson.version>2.12.3</jackson.version>
+        <ignite.version>2.13.0</ignite.version>
+        <jackson.version>2.13.3</jackson.version>
     </properties>
     <dependencyManagement>
         <dependencies>
