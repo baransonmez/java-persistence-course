@@ -22,28 +22,28 @@ public class PersistenceTest {
                 .buildMetadata()
                 .buildSessionFactory();
     }
-    public Message saveMessage(String text) {
-        Message message = new Message(text);
+    public User saveUser(String name) {
+        User user = new User(name);
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
-            session.persist(message);
+            session.persist(user);
             tx.commit();
         }
-        return message;
+        return user;
     }
     @Test
     public void readMessage() {
-        Message savedMessage = saveMessage("Hello, World");
-        List<Message> list;
+        User savedUser = saveUser("İhsan Baran SÖNMEZ");
+        List<User> list;
         try (Session session = factory.openSession()) {
             list = session
-                    .createQuery("from Message", Message.class)
+                    .createQuery("from users", User.class)
                     .list();
         }
         assertEquals(list.size(), 1);
-        for (Message m : list) {
+        for (User m : list) {
             System.out.println(m);
         }
-        assertEquals(list.get(0), savedMessage);
+        assertEquals(list.get(0), savedUser);
     }
 }
