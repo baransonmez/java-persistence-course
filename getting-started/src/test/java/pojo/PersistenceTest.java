@@ -11,7 +11,7 @@ import static org.testng.Assert.*;
 
 public class PersistenceTest {
     Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:h2:./db1", "sa", "");
+        return DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
     }
 
     @BeforeClass
