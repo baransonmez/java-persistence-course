@@ -8,8 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import static org.testng.Assert.assertEquals;
 
@@ -44,10 +43,7 @@ public class MappingCollectionsTest {
 
     @Test
     public void createVehicle() {
-        HashSet<String> images = new HashSet<>();
-        images.add("image-1");
-        images.add("image-2");
-        images.add("image-3");
+        Set<String> images = createImageSet();
         Vehicle vehicle = new Vehicle("Mercedes A180", 2017, 202.7, VehicleType.HATCHBACK, Condition.NEAR_NEW, images);
 
         try (Session session = factory.openSession()) {
@@ -69,6 +65,52 @@ public class MappingCollectionsTest {
         }
 
     }
+
+
+    /*
+        @ElementCollection
+        @Column(name = "FILENAME")
+        @CollectionTable(name = "IMAGE", joinColumns= @JoinColumn(name = "VEHICLE_ID"))
+     */
+    private HashSet<String> createImageSet() {
+        HashSet<String> images = new HashSet<>();
+        images.add("image-1");
+        images.add("image-2");
+        images.add("image-3");
+        return images;
+    }
+
+    /*
+    @ElementCollection
+    @CollectionTable(name = "IMAGE")
+    @Column(name = "IMAGE_PATH")
+    @MapKeyColumn(name = "FILENAME")
+     */
+    private HashMap<String, String> createImageMap() {
+        HashMap<String, String> images = new HashMap<>();
+        /*
+        HashMap<fileName, imageName>
+         */
+        images.put("image1.jpg", "image-1");
+        images.put("image2.jpg", "image-2");
+        images.put("image3.jpg", "image-3");
+        return images;
+    }
+
+    /*
+    @ElementCollection
+    @Column(name = "IMAGE_PATH")
+    @CollectionTable(name = "IMAGE")
+    @OrderColumn
+ */
+    private List<String> createImageList() {
+        List<String> images = new ArrayList<>();
+        images.add("image-1");
+        images.add("image-2");
+        images.add("image-3");
+        return images;
+    }
+
 
     public User saveUser(String userName, AccountType accountType, AccountStatus status, Address billingAddress, Address deliveryAddress) {
         User user = new User(userName, accountType, status, billingAddress, deliveryAddress);

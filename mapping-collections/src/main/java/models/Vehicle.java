@@ -2,7 +2,9 @@ package models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name = "vehicles")
@@ -25,8 +27,8 @@ public class Vehicle {
     private Condition condition;
 
     @ElementCollection
-    @Column(name = "IMAGE_PATH")
-    @CollectionTable(name = "IMAGE")
+    @Column(name = "FILENAME")
+    @CollectionTable(name = "IMAGE", joinColumns= @JoinColumn(name = "VEHICLE_ID"))
     private Set<String> images = new HashSet<>();
 
     public Vehicle(String model, int year, double dailyPrice, VehicleType type, Condition condition, Set<String> images) {
