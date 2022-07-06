@@ -2,10 +2,7 @@ package models;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity(name = "vehicles")
 public class Vehicle {
@@ -55,4 +52,5 @@ public class Vehicle {
                 ", images=" + images +
                 '}';
     }
+
 }

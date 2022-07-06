@@ -27,21 +27,6 @@ public class MappingCollectionsTest {
     }
 
     @Test
-    public void readUser() {
-        saveUser("username", AccountType.GOLD, AccountStatus.ACTIVE, new Address("emre cd", "06798", "Ankara"), new Address("emre cd", "06798", "Ankara"));
-        List<User> list;
-        try (Session session = factory.openSession()) {
-            list = session
-                    .createQuery("select u from users u", User.class)
-                    .list();
-        }
-        assertEquals(list.size(), 1);
-        for (User m : list) {
-            System.out.println(m);
-        }
-    }
-
-    @Test
     public void createVehicle() {
         Set<String> images = createImageSet();
         Vehicle vehicle = new Vehicle("Mercedes A180", 2017, 202.7, VehicleType.HATCHBACK, Condition.NEAR_NEW, images);
@@ -66,11 +51,11 @@ public class MappingCollectionsTest {
 
     }
 
-
     /*
         @ElementCollection
         @Column(name = "FILENAME")
         @CollectionTable(name = "IMAGE", joinColumns= @JoinColumn(name = "VEHICLE_ID"))
+        private Set<String> images = new HashSet<>();
      */
     private HashSet<String> createImageSet() {
         HashSet<String> images = new HashSet<>();
@@ -85,6 +70,7 @@ public class MappingCollectionsTest {
     @CollectionTable(name = "IMAGE")
     @Column(name = "IMAGE_PATH")
     @MapKeyColumn(name = "FILENAME")
+    private Map<String, String> images = new HashMap<>();
      */
     private HashMap<String, String> createImageMap() {
         HashMap<String, String> images = new HashMap<>();
@@ -97,11 +83,12 @@ public class MappingCollectionsTest {
         return images;
     }
 
-    /*
+  /*
     @ElementCollection
     @Column(name = "IMAGE_PATH")
     @CollectionTable(name = "IMAGE")
     @OrderColumn
+    List<String> images = new Arraylist<>();
  */
     private List<String> createImageList() {
         List<String> images = new ArrayList<>();
@@ -111,14 +98,4 @@ public class MappingCollectionsTest {
         return images;
     }
 
-
-    public User saveUser(String userName, AccountType accountType, AccountStatus status, Address billingAddress, Address deliveryAddress) {
-        User user = new User(userName, accountType, status, billingAddress, deliveryAddress);
-        try (Session session = factory.openSession()) {
-            Transaction tx = session.beginTransaction();
-            session.persist(user);
-            tx.commit();
-        }
-        return user;
-    }
 }
