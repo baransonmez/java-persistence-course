@@ -1,5 +1,7 @@
-import models.unidirectional.LeaseContract;
-import models.unidirectional.Vehicle;
+package manytoone;
+
+import models.manytoone.bidirectional.LeaseContract;
+import models.manytoone.bidirectional.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,12 +12,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
-public class UnidirectionalManyToOneTest {
+public class BidirectionalManyToOneTest {
     private SessionFactory factory = null;
 
     @BeforeClass
@@ -42,12 +42,14 @@ public class UnidirectionalManyToOneTest {
             session.persist(firstContract);
             session.persist(secondContract);
             session.persist(thirdContract);
+            assertEquals(vehicle.getContractHistory().size(), 0);
             tx.commit();
         }
 
         try (Session session = factory.openSession()) {
-            LeaseContract firstFromDB = session.find(LeaseContract.class, firstContract.getId());
-            System.out.println(firstFromDB);
+            Vehicle vehicleFromDB = session.find(Vehicle.class, vehicle.getId());
+            System.out.println(vehicleFromDB);
+            assertEquals(vehicleFromDB.getContractHistory().size(), 3);
         }
 
     }

@@ -1,4 +1,4 @@
-package models.unidirectional;
+package models.manytoone.unidirectional;
 
 import jakarta.persistence.*;
 

@@ -14,7 +14,10 @@
         <property name="show_sql">true</property>
         <!--  Drop and re-create the database schema on startup  -->
         <property name="hbm2ddl.auto">create-drop</property>
-        <mapping class="models.unidirectional.Vehicle"/>
-        <mapping class="models.unidirectional.LeaseContract"/>
+        <!--        <mapping class="models.unidirectional.Vehicle"/>-->
+        <!--        <mapping class="models.unidirectional.LeaseContract"/>-->
+
+        <mapping class="models.manytoone.bidirectional.Vehicle"/>
+        <mapping class="models.manytoone.bidirectional.LeaseContract"/>
     </session-factory>
 </hibernate-configuration>

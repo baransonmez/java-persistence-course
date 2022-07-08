@@ -1,9 +1,9 @@
-package models.unidirectional;
+package models.manytoone.bidirectional;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "vehicles")
 public class Vehicle {
@@ -13,6 +13,8 @@ public class Vehicle {
     @Column(name = "vehicle_model")
     private String model;
 
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
+    private Set<LeaseContract> contractHistory = new HashSet<>();
 
     public Vehicle() {
     }
@@ -26,6 +28,15 @@ public class Vehicle {
         return "Vehicle{" +
                 "id=" + id +
                 ", model='" + model + '\'' +
+                ", contractHistory=" + contractHistory +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Set<LeaseContract> getContractHistory() {
+        return contractHistory;
     }
 }
