@@ -17,7 +17,10 @@
         <!--        <mapping class="models.unidirectional.Vehicle"/>-->
         <!--        <mapping class="models.unidirectional.LeaseContract"/>-->
 
-        <mapping class="models.manytoone.bidirectional.Vehicle"/>
-        <mapping class="models.manytoone.bidirectional.LeaseContract"/>
+        <!--        <mapping class="models.manytoone.bidirectional.Vehicle"/>-->
+        <!--        <mapping class="models.manytoone.bidirectional.LeaseContract"/>-->
+
+        <mapping class="models.manytoone.cascade.Vehicle"/>
+        <mapping class="models.manytoone.cascade.LeaseContract"/>
     </session-factory>
 </hibernate-configuration>

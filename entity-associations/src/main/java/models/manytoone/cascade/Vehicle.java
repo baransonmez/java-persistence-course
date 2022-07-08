@@ -1,4 +1,4 @@
-package models.manytoone.bidirectional;
+package models.manytoone.cascade;
 
 import jakarta.persistence.*;
 
@@ -13,7 +13,7 @@ public class Vehicle {
     @Column(name = "vehicle_model")
     private String model;
 
-    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "vehicle", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<LeaseContract> contractHistory = new HashSet<>();
 
     public Vehicle() {
@@ -43,5 +43,9 @@ public class Vehicle {
     */
     public Set<LeaseContract> getContractHistory() {
         return new HashSet<>(contractHistory);
+    }
+
+    public void addContractToHistory(LeaseContract contract) {
+        this.contractHistory.add(contract);
     }
 }
