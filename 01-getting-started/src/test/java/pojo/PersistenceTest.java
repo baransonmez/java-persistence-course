@@ -71,9 +71,9 @@ public class PersistenceTest {
                          connection.prepareStatement(SELECT)) {
                 try (ResultSet rs = ps.executeQuery()) {
                     while (rs.next()) {
-                        UserEntity newMessage = new UserEntity();
-                        newMessage.setId(rs.getLong(1));
-                        newMessage.setName(rs.getString(2));
+                        UserEntity newUser = new UserEntity();
+                        newUser.setId(rs.getLong(1));
+                        newUser.setName(rs.getString(2));
                         list.add(userEntity);
                     }
                 }

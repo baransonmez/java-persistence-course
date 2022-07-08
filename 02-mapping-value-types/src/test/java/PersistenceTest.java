@@ -38,20 +38,18 @@ public class PersistenceTest {
         }
         return user;
     }
-
     @Test
     public void readUser() {
         saveUser("username", AccountType.GOLD, AccountStatus.ACTIVE, new Address("emre cd", "06798", "Ankara"), new Address("emre cd", "06798", "Ankara"));
         List<User> list;
         try (Session session = factory.openSession()) {
             list = session
-                    .createQuery("from users", User.class)
+                    .createQuery("select u from users u", User.class)
                     .list();
         }
         assertEquals(list.size(), 1);
         for (User m : list) {
             System.out.println(m);
-
         }
     }
 }

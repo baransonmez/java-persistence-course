@@ -8,10 +8,14 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import java.util.List;
+
 import static org.testng.Assert.assertEquals;
+
 public class PersistenceTest {
     private SessionFactory factory = null;
+
     @BeforeClass
     public void setup() {
         StandardServiceRegistry registry =
@@ -22,6 +26,7 @@ public class PersistenceTest {
                 .buildMetadata()
                 .buildSessionFactory();
     }
+
     public User saveUser(String name) {
         User user = new User(name);
         try (Session session = factory.openSession()) {
@@ -31,13 +36,14 @@ public class PersistenceTest {
         }
         return user;
     }
+
     @Test
     public void readMessage() {
         User savedUser = saveUser("İhsan Baran SÖNMEZ");
         List<User> list;
         try (Session session = factory.openSession()) {
             list = session
-                    .createQuery("from users", User.class)
+                    .createQuery("select u from users u", User.class)
                     .list();
         }
         assertEquals(list.size(), 1);
