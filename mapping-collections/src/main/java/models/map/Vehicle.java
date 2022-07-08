@@ -1,10 +1,14 @@
-package models;
+package models.map;
 
 import jakarta.persistence.*;
+import models.Condition;
+import models.VehicleType;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-@Entity(name = "vehicles")
+@Entity(name = "vehicleWithMap")
+@Table(name = "vehicles")
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,11 +28,12 @@ public class Vehicle {
     private Condition condition;
 
     @ElementCollection
-    @Column(name = "FILENAME")
-    @CollectionTable(name = "IMAGE", joinColumns= @JoinColumn(name = "VEHICLE_ID"))
-    private Set<String> images = new HashSet<>();
+    @CollectionTable(name = "IMAGE_MAP")
+    @Column(name = "IMAGE_PATH")
+    @MapKeyColumn(name = "FILENAME")
+    private Map<String, String> images = new HashMap<>();
 
-    public Vehicle(String model, int year, double dailyPrice, VehicleType type, Condition condition, Set<String> images) {
+    public Vehicle(String model, int year, double dailyPrice, VehicleType type, Condition condition, Map<String, String> images) {
         this.model = model;
         this.year = year;
         this.dailyPrice = dailyPrice;
