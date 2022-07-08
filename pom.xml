@@ -12,6 +12,7 @@
         <module>02-mapping-value-types</module>
         <module>03-mapping-collections</module>
         <module>persistence-lifecycle</module>
+        <module>entity-associations</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
