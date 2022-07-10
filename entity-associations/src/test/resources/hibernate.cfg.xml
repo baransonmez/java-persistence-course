@@ -20,7 +20,13 @@
         <!--        <mapping class="models.manytoone.bidirectional.Vehicle"/>-->
         <!--        <mapping class="models.manytoone.bidirectional.LeaseContract"/>-->
 
-        <mapping class="models.manytoone.cascade.Vehicle"/>
-        <mapping class="models.manytoone.cascade.LeaseContract"/>
+        <!--        <mapping class="models.manytoone.cascade.Vehicle"/>-->
+        <!--        <mapping class="models.manytoone.cascade.LeaseContract"/>-->
+
+<!--        <mapping class="models.onetoone.unidirectional.User"/>-->
+<!--        <mapping class="models.onetoone.unidirectional.BillingInformation"/>-->
+
+        <mapping class="models.onetoone.bidirectional.User"/>
+        <mapping class="models.onetoone.bidirectional.BillingInformation"/>
     </session-factory>
 </hibernate-configuration>
