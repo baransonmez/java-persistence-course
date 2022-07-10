@@ -1,4 +1,4 @@
-package models.onetoone.unidirectional;
+package models.onetoone.sharedKey;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

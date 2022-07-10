@@ -1,4 +1,4 @@
-package models.onetoone.unidirectional;
+package models.onetoone.foreignKey;
 
 import jakarta.persistence.*;
 
@@ -11,20 +11,23 @@ public class User {
     @Column(name = "USER_NAME", nullable = false)
     private String userName;
 
-    @OneToOne(optional = false)
-    @PrimaryKeyJoinColumn
+    @OneToOne(optional = true, cascade = CascadeType.PERSIST)
+    @JoinColumn
     private BillingInformation billingInfo;
 
     public User() {
     }
 
-    public User(String userName, BillingInformation billingInfo) {
+    public User(String userName) {
         this.userName = userName;
-        this.billingInfo = billingInfo;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setBillingInfo(BillingInformation billingInfo) {
+        this.billingInfo = billingInfo;
     }
 
     @Override

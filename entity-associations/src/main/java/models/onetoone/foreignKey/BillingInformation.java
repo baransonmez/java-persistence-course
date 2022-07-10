@@ -1,4 +1,4 @@
-package models.onetoone.bidirectional;
+package models.onetoone.foreignKey;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;

@@ -23,10 +23,10 @@
         <!--        <mapping class="models.manytoone.cascade.Vehicle"/>-->
         <!--        <mapping class="models.manytoone.cascade.LeaseContract"/>-->
 
-<!--        <mapping class="models.onetoone.unidirectional.User"/>-->
-<!--        <mapping class="models.onetoone.unidirectional.BillingInformation"/>-->
+        <!--        <mapping class="models.onetoone.sharedKey.User"/>-->
+        <!--        <mapping class="models.onetoone.sharedKey.BillingInformation"/>-->
 
-        <mapping class="models.onetoone.bidirectional.User"/>
-        <mapping class="models.onetoone.bidirectional.BillingInformation"/>
+        <mapping class="models.onetoone.foreignKey.User"/>
+        <mapping class="models.onetoone.foreignKey.BillingInformation"/>
     </session-factory>
 </hibernate-configuration>

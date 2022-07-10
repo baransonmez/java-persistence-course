@@ -1,7 +1,7 @@
-package onetoone.bidirectional;
+package onetoone.foreignKey;
 
-import models.onetoone.bidirectional.BillingInformation;
-import models.onetoone.bidirectional.User;
+import models.onetoone.foreignKey.BillingInformation;
+import models.onetoone.foreignKey.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -48,7 +48,7 @@ public class OneToOneTest {
     }
 
     @Test
-    public void billingUseSameKeyProof() {
+    public void foreignKeyColumnTest() {
         User user = new User("barans");
         User user2 = new User("barans2");
         User user3 = new User("barans3");

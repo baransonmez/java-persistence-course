@@ -1,7 +1,7 @@
-package onetoone.unidirectional;
+package onetoone.sharedKey;
 
-import models.onetoone.unidirectional.BillingInformation;
-import models.onetoone.unidirectional.User;
+import models.onetoone.sharedKey.BillingInformation;
+import models.onetoone.sharedKey.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -30,12 +30,13 @@ public class OneToOneTest {
     }
 
     @Test
-    public void createUser() {
+    public void sharedPrimaryKeyExampleTest() {
         BillingInformation billing = new BillingInformation("1111 2222 3333 4444", LocalDate.now().plusDays(5));
-        User user = new User("barans", billing);
+        User user;
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
             session.persist(billing);
+            user = new User("barans", billing);
             session.persist(user);
             tx.commit();
         }
