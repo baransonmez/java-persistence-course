@@ -26,7 +26,10 @@
         <!--        <mapping class="models.onetoone.sharedKey.User"/>-->
         <!--        <mapping class="models.onetoone.sharedKey.BillingInformation"/>-->
 
-        <mapping class="models.onetoone.foreignKey.User"/>
-        <mapping class="models.onetoone.foreignKey.BillingInformation"/>
+<!--        <mapping class="models.onetoone.foreignKey.User"/>-->
+<!--        <mapping class="models.onetoone.foreignKey.BillingInformation"/>-->
+
+        <mapping class="models.onetoone.jointable.User"/>
+        <mapping class="models.onetoone.jointable.Vehicle"/>
     </session-factory>
 </hibernate-configuration>
