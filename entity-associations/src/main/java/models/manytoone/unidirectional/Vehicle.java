@@ -2,9 +2,6 @@ package models.manytoone.unidirectional;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity(name = "vehicles")
 public class Vehicle {
     @Id

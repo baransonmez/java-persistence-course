@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.time.LocalDate;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertNotNull;
 
 public class OneToOneTest {
     private SessionFactory factory = null;
