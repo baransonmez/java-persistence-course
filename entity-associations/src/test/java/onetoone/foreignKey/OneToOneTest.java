@@ -31,23 +31,6 @@ public class OneToOneTest {
     }
 
     @Test
-    public void createUser() {
-        User user = new User("barans");
-        BillingInformation billing = new BillingInformation("1111 2222 3333 4444", LocalDate.now().plusDays(5), user);
-        try (Session session = factory.openSession()) {
-            Transaction tx = session.beginTransaction();
-            session.persist(user);
-            tx.commit();
-        }
-
-        try (Session session = factory.openSession()) {
-            User userFromDb = session.find(User.class, user.getId());
-            System.out.println(userFromDb);
-            assertNotNull(userFromDb);
-        }
-    }
-
-    @Test
     public void foreignKeyColumnTest() {
         User user = new User("barans");
         User user2 = new User("barans2");
@@ -65,10 +48,8 @@ public class OneToOneTest {
         }
 
         try (Session session = factory.openSession()) {
-            User userFromDb = session.find(User.class, user2.getId());
-            System.out.println(userFromDb);
-            assertNotNull(userFromDb);
-            assertEquals(userFromDb.getId(), billing2.getId());
+            User user2FromDb = session.find(User.class, user2.getId());
+            assertNotNull(user2FromDb);
         }
     }
 

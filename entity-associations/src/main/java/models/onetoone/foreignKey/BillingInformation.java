@@ -9,12 +9,7 @@ import java.time.LocalDate;
 @Entity(name = "billingInformation")
 public class BillingInformation {
     @Id
-    @GeneratedValue(generator = "billingKeyGenerator")
-    @GenericGenerator(
-            name = "billingKeyGenerator",
-            strategy = "foreign",
-            parameters = @Parameter(name = "property", value = "user")
-    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String cardNumber;
     private LocalDate expirationDate;
