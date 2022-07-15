@@ -10,9 +10,9 @@
     <modules>
         <module>01-getting-started</module>
         <module>02-mapping-value-types</module>
-        <module>03-mapping-collections</module>
-        <module>persistence-lifecycle</module>
-        <module>entity-associations</module>
+        <module>03-persistence-lifecycle</module>
+        <module>04-mapping-collections</module>
+        <module>05-entity-associations</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

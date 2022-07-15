@@ -180,6 +180,4 @@ public class PersistenceLifeCycleTest {
         assertEquals(vehicle.getModel(), oldModelName);
     }
 
-
-
 }
