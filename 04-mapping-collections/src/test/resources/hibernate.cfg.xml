@@ -15,8 +15,8 @@
         <!--  Drop and re-create the database schema on startup  -->
         <property name="hbm2ddl.auto">create-drop</property>
         <mapping class="models.VehicleType"/>
-<!--        <mapping class="models.set.Vehicle"/>-->
-<!--        <mapping class="models.map.Vehicle"/>-->
-        <mapping class="models.list.Vehicle"/>
+        <!--        <mapping class="models.set.Vehicle"/>-->
+        <mapping class="models.map.Vehicle"/>
+        <!--        <mapping class="models.list.Vehicle"/>-->
     </session-factory>
 </hibernate-configuration>
