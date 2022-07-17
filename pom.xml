@@ -13,6 +13,7 @@
         <module>03-persistence-lifecycle</module>
         <module>04-mapping-collections</module>
         <module>05-entity-associations</module>
+        <module>06-query</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
