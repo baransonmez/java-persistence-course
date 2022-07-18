@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 import java.time.LocalDate;
 
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class OneToOneTest {

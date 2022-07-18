@@ -1,16 +1,11 @@
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 import models.Condition;
 import models.Vehicle;
 import models.VehicleType;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.query.criteria.HibernateCriteriaBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

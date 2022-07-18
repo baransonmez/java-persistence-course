@@ -1,7 +1,6 @@
 package models.manytomany.simple;
 
 import jakarta.persistence.*;
-import models.manytoone.cascade.LeaseContract;
 
 import java.util.HashSet;
 import java.util.Set;

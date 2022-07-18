@@ -1,7 +1,6 @@
 package models.onetoone.mapsid;
 
 import jakarta.persistence.*;
-import models.onetoone.sharedKey.BillingInformation;
 
 @Entity(name = "users")
 public class User {

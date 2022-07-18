@@ -1,8 +1,6 @@
 package models.onetoone.foreignKey;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 import java.time.LocalDate;
 
