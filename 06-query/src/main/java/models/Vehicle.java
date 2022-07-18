@@ -54,4 +54,31 @@ public class Vehicle {
                 '}';
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getDailyPrice() {
+        return dailyPrice;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public VehicleType getType() {
+        return type;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public Set<String> getImages() {
+        return new HashSet<>(images);
+    }
 }
