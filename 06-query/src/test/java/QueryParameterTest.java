@@ -30,7 +30,6 @@ public class QueryParameterTest {
 
     @Test
     public void queryVehicleTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             list = session
@@ -44,7 +43,6 @@ public class QueryParameterTest {
 
     @Test
     public void queryParameterStringVehicleTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             String modelParameter = "model-3";
@@ -56,13 +54,11 @@ public class QueryParameterTest {
             }
             assertEquals(list.size(), 1);
             assertEquals(list.get(0).getModel(), modelParameter);
-
         }
     }
 
     @Test
     public void queryParameterEnumStringVehicleTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             Condition conditionParameter = Condition.NEAR_NEW;
@@ -73,15 +69,12 @@ public class QueryParameterTest {
                 System.out.println(v);
             }
             assertEquals(list.size(), 2);
-            list.forEach(vehicle ->
-                    assertEquals(vehicle.getCondition(), conditionParameter));
-
+            list.forEach(vehicle -> assertEquals(vehicle.getCondition(), conditionParameter));
         }
     }
 
     @Test
     public void queryParameterEnumOrdinalVehicleTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             VehicleType typeParameter = VehicleType.HATCHBACK;
@@ -92,14 +85,12 @@ public class QueryParameterTest {
                 System.out.println(v);
             }
             assertEquals(list.size(), 2);
-            list.forEach(vehicle ->
-                    assertEquals(vehicle.getType(), typeParameter));
+            list.forEach(vehicle -> assertEquals(vehicle.getType(), typeParameter));
         }
     }
 
     @Test
     public void queryParameterNumberGreaterThanTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             double dailyPrice = 110.5;
@@ -110,8 +101,7 @@ public class QueryParameterTest {
                 System.out.println(v);
             }
             assertEquals(list.size(), 2);
-            list.forEach(vehicle ->
-                    assertTrue(vehicle.getDailyPrice() > dailyPrice));
+            list.forEach(vehicle -> assertTrue(vehicle.getDailyPrice() > dailyPrice));
         }
     }
 
