@@ -1,6 +1,8 @@
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import models.Condition;
 import models.Vehicle;
 import models.VehicleType;
 import org.hibernate.Session;
@@ -32,11 +34,11 @@ public class CriteriaTest {
 
     @Test
     public void selectAllVehiclesTest() {
-
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<Vehicle> query = criteriaBuilder.createQuery(Vehicle.class);
+
             query.select(query.from(Vehicle.class));
             list = session
                     .createQuery(query)
@@ -50,11 +52,11 @@ public class CriteriaTest {
 
     @Test
     public void queryWithModelFieldTest() {
-
         try (Session session = factory.openSession()) {
             String searchString = "model-2";
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<Vehicle> query = criteriaBuilder.createQuery(Vehicle.class);
+
             Root<Vehicle> root = query.from(Vehicle.class);
             query.select(root).where(criteriaBuilder.equal(root.get("model"), searchString));
             Vehicle v = session
@@ -66,11 +68,11 @@ public class CriteriaTest {
 
     @Test
     public void queryWithEnumFieldTest() {
-
         try (Session session = factory.openSession()) {
             VehicleType searchType = VehicleType.SUV;
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<Vehicle> query = criteriaBuilder.createQuery(Vehicle.class);
+
             Root<Vehicle> root = query.from(Vehicle.class);
             query.select(root).where(criteriaBuilder.equal(root.get("type"), searchType));
             Vehicle v = session
@@ -82,19 +84,39 @@ public class CriteriaTest {
 
     @Test
     public void queryWithNumberFieldTest() {
-
         try (Session session = factory.openSession()) {
             double dailyPrice = 104;
             CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
             CriteriaQuery<Vehicle> query = criteriaBuilder.createQuery(Vehicle.class);
+
             Root<Vehicle> root = query.from(Vehicle.class);
             query.select(root).where(criteriaBuilder.greaterThan(root.get("dailyPrice"), dailyPrice));
             List<Vehicle> list = session
                     .createQuery(query)
                     .list();
+
             assertEquals(list.size(), 3);
-            list.forEach(vehicle ->
-                    assertTrue(vehicle.getDailyPrice() > dailyPrice));
+            list.forEach(vehicle -> assertTrue(vehicle.getDailyPrice() > dailyPrice));
+        }
+    }
+
+    @Test
+    public void queryWithOrTest() {
+        try (Session session = factory.openSession()) {
+            double dailyPrice = 125;
+            Condition vehicleCondition = Condition.NEAR_NEW;
+            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+            CriteriaQuery<Vehicle> query = criteriaBuilder.createQuery(Vehicle.class);
+
+            Root<Vehicle> root = query.from(Vehicle.class);
+            Predicate dailyPricePredicate = criteriaBuilder.greaterThan(root.get("dailyPrice"), dailyPrice);
+            Predicate conditionPredicate = criteriaBuilder.notEqual(root.get("condition"), vehicleCondition);
+            query.select(root).where(criteriaBuilder.or(dailyPricePredicate, conditionPredicate));
+
+            List<Vehicle> list = session
+                    .createQuery(query)
+                    .list();
+            assertEquals(list.size(), 2);
         }
     }
 }
