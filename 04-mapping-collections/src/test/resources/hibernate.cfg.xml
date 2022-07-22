@@ -16,7 +16,10 @@
         <property name="hbm2ddl.auto">create-drop</property>
         <mapping class="models.VehicleType"/>
         <!--        <mapping class="models.set.Vehicle"/>-->
-        <mapping class="models.map.Vehicle"/>
+<!--        <mapping class="models.map.Vehicle"/>-->
         <!--        <mapping class="models.list.Vehicle"/>-->
+
+        <mapping class="models.embeddable.Vehicle"/>
+        <mapping class="models.embeddable.Image"/>
     </session-factory>
 </hibernate-configuration>
