@@ -1,7 +1,7 @@
 package onetoone.sharedKey;
 
-import models.onetoone.sharedKey.BillingInformation;
 import models.onetoone.sharedKey.User;
+import models.onetoone.sharedKey.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,8 +10,6 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.time.LocalDate;
 
 import static org.testng.Assert.assertNotNull;
 
@@ -31,12 +29,12 @@ public class OneToOneTest {
 
     @Test
     public void sharedPrimaryKeyExampleTest() {
-        BillingInformation billing = new BillingInformation("1111 2222 3333 4444", LocalDate.now().plusDays(5));
+        UserDetails userDetails = new UserDetails("photourl.com");
         User user;
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
-            session.persist(billing);
-            user = new User("barans", billing);
+            session.persist(userDetails);
+            user = new User("barans", userDetails);
             session.persist(user);
             tx.commit();
         }

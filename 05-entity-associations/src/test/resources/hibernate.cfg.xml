@@ -23,8 +23,8 @@
         <!--        <mapping class="models.manytoone.cascade.Vehicle"/>-->
         <!--        <mapping class="models.manytoone.cascade.LeaseContract"/>-->
 
-        <!--        <mapping class="models.onetoone.sharedKey.User"/>-->
-        <!--        <mapping class="models.onetoone.sharedKey.BillingInformation"/>-->
+        <mapping class="models.onetoone.sharedKey.User"/>
+        <mapping class="models.onetoone.sharedKey.UserDetails"/>
 
         <!--        <mapping class="models.onetoone.foreignKey.User"/>-->
         <!--        <mapping class="models.onetoone.foreignKey.BillingInformation"/>-->
@@ -35,11 +35,11 @@
         <!--        <mapping class="models.onetoone.mapsid.User"/>-->
         <!--        <mapping class="models.onetoone.mapsid.UserDetails"/>-->
 
-        <!--                <mapping class="models.manytomany.simple.Vehicle"/>-->
-        <!--                <mapping class="models.manytomany.simple.Tag"/>-->
+        <!--        <mapping class="models.manytomany.simple.Vehicle"/>-->
+        <!--        <mapping class="models.manytomany.simple.Tag"/>-->
 
-        <mapping class="models.manytomany.intermediateentity.Tag"/>
-        <mapping class="models.manytomany.intermediateentity.Vehicle"/>
-        <mapping class="models.manytomany.intermediateentity.TaggedVehicle"/>
+        <!--        <mapping class="models.manytomany.intermediateentity.Tag"/>-->
+        <!--        <mapping class="models.manytomany.intermediateentity.Vehicle"/>-->
+        <!--        <mapping class="models.manytomany.intermediateentity.TaggedVehicle"/>-->
     </session-factory>
 </hibernate-configuration>

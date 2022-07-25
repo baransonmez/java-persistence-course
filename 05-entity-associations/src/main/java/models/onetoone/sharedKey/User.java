@@ -12,15 +12,15 @@ public class User {
 
     @OneToOne(optional = false)
     @PrimaryKeyJoinColumn
-    private BillingInformation billingInfo;
+    private UserDetails userDetails;
 
     public User() {
     }
 
-    public User(String userName, BillingInformation billingInfo) {
-        this.id = billingInfo.getId();
+    public User(String userName, UserDetails userDetails) {
+        this.id = userDetails.getId();
         this.userName = userName;
-        this.billingInfo = billingInfo;
+        this.userDetails = userDetails;
     }
 
     public Long getId() {
@@ -32,7 +32,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
-                ", billingInfo=" + billingInfo +
+                ", billingInfo=" + userDetails +
                 '}';
     }
 }
