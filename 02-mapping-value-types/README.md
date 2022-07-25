@@ -1,3 +1,3 @@
 # System Architecture
 
-![Alt text](JavaPersistenceSystemArchitecture.png)
+![Alt text](SystemArchitecture.png)
