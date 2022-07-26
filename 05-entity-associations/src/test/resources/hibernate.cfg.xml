@@ -23,8 +23,11 @@
         <!--        <mapping class="models.manytoone.cascade.Vehicle"/>-->
         <!--        <mapping class="models.manytoone.cascade.LeaseContract"/>-->
 
-        <mapping class="models.onetoone.sharedKey.User"/>
-        <mapping class="models.onetoone.sharedKey.UserDetails"/>
+        <mapping class="models.manytoone.jointable.Vehicle"/>
+        <mapping class="models.manytoone.jointable.LeaseContract"/>
+
+        <!--        <mapping class="models.onetoone.sharedKey.User"/>-->
+        <!--        <mapping class="models.onetoone.sharedKey.UserDetails"/>-->
 
         <!--        <mapping class="models.onetoone.foreignKey.User"/>-->
         <!--        <mapping class="models.onetoone.foreignKey.BillingInformation"/>-->
