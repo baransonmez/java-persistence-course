@@ -1,8 +1,8 @@
 package manytoone;
 
+import cases.manytoone.cascade.LeaseContract;
+import cases.manytoone.cascade.Vehicle;
 import jakarta.persistence.PersistenceException;
-import models.manytoone.cascade.LeaseContract;
-import models.manytoone.cascade.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

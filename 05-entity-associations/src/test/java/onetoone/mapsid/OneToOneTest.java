@@ -1,7 +1,7 @@
 package onetoone.mapsid;
 
-import models.onetoone.mapsid.User;
-import models.onetoone.mapsid.UserDetails;
+import cases.onetoone.mapsid.User;
+import cases.onetoone.mapsid.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

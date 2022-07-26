@@ -1,7 +1,7 @@
 package onetoone.sharedKey;
 
-import models.onetoone.sharedKey.User;
-import models.onetoone.sharedKey.UserDetails;
+import cases.onetoone.sharedKey.User;
+import cases.onetoone.sharedKey.UserDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

@@ -14,35 +14,35 @@
         <property name="show_sql">true</property>
         <!--  Drop and re-create the database schema on startup  -->
         <property name="hbm2ddl.auto">create-drop</property>
-        <!--        <mapping class="models.unidirectional.Vehicle"/>-->
-        <!--        <mapping class="models.unidirectional.LeaseContract"/>-->
+        <!--        <mapping class="cases.unidirectional.Vehicle"/>-->
+        <!--        <mapping class="cases.unidirectional.LeaseContract"/>-->
 
-        <!--        <mapping class="models.manytoone.bidirectional.Vehicle"/>-->
-        <!--        <mapping class="models.manytoone.bidirectional.LeaseContract"/>-->
+        <!--        <mapping class="cases.manytoone.bidirectional.Vehicle"/>-->
+        <!--        <mapping class="cases.manytoone.bidirectional.LeaseContract"/>-->
 
-        <!--        <mapping class="models.manytoone.cascade.Vehicle"/>-->
-        <!--        <mapping class="models.manytoone.cascade.LeaseContract"/>-->
+        <!--        <mapping class="cases.manytoone.cascade.Vehicle"/>-->
+        <!--        <mapping class="cases.manytoone.cascade.LeaseContract"/>-->
 
-        <mapping class="models.manytoone.jointable.Vehicle"/>
-        <mapping class="models.manytoone.jointable.LeaseContract"/>
+        <!--        <mapping class="cases.manytoone.jointable.Vehicle"/>-->
+        <!--        <mapping class="cases.manytoone.jointable.LeaseContract"/>-->
 
-        <!--        <mapping class="models.onetoone.sharedKey.User"/>-->
-        <!--        <mapping class="models.onetoone.sharedKey.UserDetails"/>-->
+        <!--        <mapping class="cases.onetoone.sharedKey.User"/>-->
+        <!--        <mapping class="cases.onetoone.sharedKey.UserDetails"/>-->
 
-        <!--        <mapping class="models.onetoone.foreignKey.User"/>-->
-        <!--        <mapping class="models.onetoone.foreignKey.BillingInformation"/>-->
+        <!--        <mapping class="cases.onetoone.foreignKey.User"/>-->
+        <!--        <mapping class="cases.onetoone.foreignKey.BillingInformation"/>-->
 
-        <!--        <mapping class="models.onetoone.jointable.User"/>-->
-        <!--        <mapping class="models.onetoone.jointable.User"/>-->
+        <!--        <mapping class="cases.onetoone.jointable.User"/>-->
+        <!--        <mapping class="cases.onetoone.jointable.User"/>-->
 
-        <!--        <mapping class="models.onetoone.mapsid.User"/>-->
-        <!--        <mapping class="models.onetoone.mapsid.UserDetails"/>-->
+        <!--        <mapping class="cases.onetoone.mapsid.User"/>-->
+        <!--        <mapping class="cases.onetoone.mapsid.UserDetails"/>-->
 
-        <!--        <mapping class="models.manytomany.simple.Vehicle"/>-->
-        <!--        <mapping class="models.manytomany.simple.Tag"/>-->
+        <!--        <mapping class="cases.manytomany.simple.Vehicle"/>-->
+        <!--        <mapping class="cases.manytomany.simple.Tag"/>-->
 
-        <!--        <mapping class="models.manytomany.intermediateentity.Tag"/>-->
-        <!--        <mapping class="models.manytomany.intermediateentity.Vehicle"/>-->
-        <!--        <mapping class="models.manytomany.intermediateentity.TaggedVehicle"/>-->
+        <mapping class="cases.manytomany.intermediateentity.Tag"/>
+        <mapping class="cases.manytomany.intermediateentity.Vehicle"/>
+        <mapping class="cases.manytomany.intermediateentity.TaggedVehicle"/>
     </session-factory>
 </hibernate-configuration>

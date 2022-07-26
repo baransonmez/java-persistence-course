@@ -1,7 +1,7 @@
 package onetoone.jointable;
 
-import models.onetoone.jointable.User;
-import models.onetoone.jointable.Vehicle;
+import cases.onetoone.jointable.User;
+import cases.onetoone.jointable.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

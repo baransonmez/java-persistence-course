@@ -1,7 +1,7 @@
 package onetoone.foreignKey;
 
-import models.onetoone.foreignKey.BillingInformation;
-import models.onetoone.foreignKey.User;
+import cases.onetoone.foreignKey.BillingInformation;
+import cases.onetoone.foreignKey.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

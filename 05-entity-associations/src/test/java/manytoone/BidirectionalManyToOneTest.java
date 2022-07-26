@@ -1,7 +1,7 @@
 package manytoone;
 
-import models.manytoone.bidirectional.LeaseContract;
-import models.manytoone.bidirectional.Vehicle;
+import cases.manytoone.bidirectional.LeaseContract;
+import cases.manytoone.bidirectional.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

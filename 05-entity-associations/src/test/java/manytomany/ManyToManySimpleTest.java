@@ -1,7 +1,7 @@
 package manytomany;
 
-import models.manytomany.simple.Tag;
-import models.manytomany.simple.Vehicle;
+import cases.manytomany.simple.Tag;
+import cases.manytomany.simple.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
