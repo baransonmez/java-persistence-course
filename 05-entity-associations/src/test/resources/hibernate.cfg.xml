@@ -26,8 +26,12 @@
         <!--        <mapping class="cases.manytoone.jointable.Vehicle"/>-->
         <!--        <mapping class="cases.manytoone.jointable.LeaseContract"/>-->
 
-        <mapping class="cases.onetomany.unidirectional.regular.Vehicle"/>
-        <mapping class="cases.onetomany.unidirectional.regular.LeaseContract"/>
+        <!--        <mapping class="cases.onetomany.unidirectional.regular.Vehicle"/>-->
+        <!--        <mapping class="cases.onetomany.unidirectional.regular.LeaseContract"/>-->
+
+        <mapping class="cases.onetomany.bidirectional.Vehicle"/>
+        <mapping class="cases.onetomany.bidirectional.LeaseContract"/>
+
 
         <!--                <mapping class="cases.onetomany.unidirectional.joincolumn.Vehicle"/>-->
         <!--                <mapping class="cases.onetomany.unidirectional.joincolumn.LeaseContract"/>-->
