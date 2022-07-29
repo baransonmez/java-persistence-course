@@ -23,14 +23,12 @@
         <hibernate.core.version>6.1.1.Final</hibernate.core.version>
         <h2.version>2.1.210</h2.version>
         <logback.version>1.2.3</logback.version>
-        <lombok.version>1.18.24</lombok.version>
         <hibernate.validator.version>
             7.0.4.Final
         </hibernate.validator.version>
-        <javax.el-api.version>3.0.0</javax.el-api.version>
-        <ignite.version>2.13.0</ignite.version>
         <jackson.version>2.13.3</jackson.version>
         <jakarta.version>3.0.2</jakarta.version>
+        <jakarta.el.version>4.0.1</jakarta.el.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -55,21 +53,6 @@
                 <version>${logback.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ignite</groupId>
-                <artifactId>ignite-core</artifactId>
-                <version>${ignite.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate.orm</groupId>
-                <artifactId>hibernate-jcache</artifactId>
-                <version>${hibernate.core.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-envers</artifactId>
                 <version>${hibernate.core.version}</version>
@@ -88,6 +71,16 @@
                 <groupId>jakarta.validation</groupId>
                 <artifactId>jakarta.validation-api</artifactId>
                 <version>${jakarta.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>jakarta.el</artifactId>
+                <version>${jakarta.el.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -110,10 +103,17 @@
             <artifactId>testng</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
         </dependency>
     </dependencies>
     <build>
