@@ -92,7 +92,7 @@ public class PersistenceLifeCycleTest {
         try (Session session = factory.openSession()) {
 
             Vehicle vehicleFromDB = session
-                    .find(Vehicle.class, vehicle.id);
+                    .find(Vehicle.class, vehicle.getId());
             assertNotEquals(newModelName, vehicleFromDB.getModel());
         }
 
@@ -119,7 +119,7 @@ public class PersistenceLifeCycleTest {
 
         try (Session session = factory.openSession()) {
             Vehicle vehicleFromDB = session
-                    .find(Vehicle.class, vehicle.id);
+                    .find(Vehicle.class, vehicle.getId());
             assertEquals(newModelName, vehicleFromDB.getModel());
         }
     }
@@ -144,15 +144,15 @@ public class PersistenceLifeCycleTest {
 
         System.out.println("Creating Session");
         try (Session session = factory.openSession()) {
-            session.find(Vehicle.class, vehicle.id);
-            session.find(Vehicle.class, vehicle.id);
-            session.find(Vehicle.class, vehicle.id);
+            session.find(Vehicle.class, vehicle.getId());
+            session.find(Vehicle.class, vehicle.getId());
+            session.find(Vehicle.class, vehicle.getId());
         }
 
         System.out.println("Creating Another Session");
         try (Session session = factory.openSession()) {
-            session.find(Vehicle.class, vehicle.id);
-            session.find(Vehicle.class, vehicle.id);
+            session.find(Vehicle.class, vehicle.getId());
+            session.find(Vehicle.class, vehicle.getId());
         }
     }
 

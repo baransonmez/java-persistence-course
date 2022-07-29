@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    protected Long id;
+    private Long id;
     @Column(name = "vehicle_model")
     private String model;
 
@@ -23,6 +23,10 @@ public class Vehicle {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     @Override
