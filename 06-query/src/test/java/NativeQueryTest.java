@@ -1,7 +1,6 @@
 import models.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -63,11 +62,9 @@ public class NativeQueryTest {
         List<Vehicle> list;
         try (Session session = factory.openSession()) {
             String modelParameter = "model-3";
-            Transaction tx = session.beginTransaction();
             list = session
                     .createNativeQuery("select * from vehicles  where vehicle_model='" + modelParameter + "' or 1=1;", Vehicle.class)
                     .list();
-            tx.commit();
             for (Vehicle v : list) {
                 System.out.println(v);
             }
