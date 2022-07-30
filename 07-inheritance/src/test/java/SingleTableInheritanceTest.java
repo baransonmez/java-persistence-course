@@ -26,10 +26,10 @@ public class SingleTableInheritanceTest {
 
     @Test
     public void singleTableTest() {
-        CreditCard c1 = new CreditCard("CARD NUMBER CARD NUMBER", "11", "25");
-        CreditCard c2 = new CreditCard("CARD NUMBER 2 CARD NUMBER 2", "1", "23");
-        BankAccount b1 = new BankAccount("IBAN IBAN 1 IBAN IBAN", "BANK NAME");
-        BankAccount b2 = new BankAccount("IBAN IBAN 2 IBAN IBAN", "BANK 2 NAME");
+        CreditCard c1 = new CreditCard("owner1", "CARD NUMBER CARD NUMBER", "11", "25");
+        CreditCard c2 = new CreditCard("owner2", "CARD NUMBER 2 CARD NUMBER 2", "1", "23");
+        BankAccount b1 = new BankAccount("owner3", "IBAN IBAN 1 IBAN IBAN", "BANK NAME");
+        BankAccount b2 = new BankAccount("owner4", "IBAN IBAN 2 IBAN IBAN", "BANK 2 NAME");
         try (Session session = factory.openSession()) {
             Transaction tx = session.beginTransaction();
 

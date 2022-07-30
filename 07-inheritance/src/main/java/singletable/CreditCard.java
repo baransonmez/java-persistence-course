@@ -14,10 +14,11 @@ public class CreditCard extends BillingDetails {
     @NotNull
     protected String expYear;
 
-    public CreditCard(String cardNumber, String expMonth, String expYear) {
+    public CreditCard(String ownerName, String cardNumber, String expMonth, String expYear) {
         this.cardNumber = cardNumber;
         this.expMonth = expMonth;
         this.expYear = expYear;
+        this.ownerName = ownerName;
     }
 
     public CreditCard() {

@@ -12,9 +12,10 @@ public class BankAccount extends BillingDetails {
     public BankAccount() {
     }
 
-    public BankAccount(String IBAN, String bankName) {
+    public BankAccount(String ownerName, String IBAN, String bankName) {
         this.IBAN = IBAN;
         this.bankName = bankName;
+        this.ownerName = ownerName;
     }
 
     @Override

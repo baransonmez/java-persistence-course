@@ -10,6 +10,8 @@ public abstract class BillingDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     protected Long id;
 
+    public String ownerName;
+
     public Long getId() {
         return id;
     }
