@@ -10,7 +10,7 @@ in this package are activated in the hibernate.cfg.xml file.
 | 1   | 'IBAN IBAN 1 IBAN IBAN' | 'BANK NAME'   | 'owner3'  |
 | 2   | 'IBAN IBAN 2 IBAN IBAN' | 'BANK NAME2'  | 'owner4'  |
 
-## BILLINGDETAILS table's structure
+## Credit Card table's structure
 
 | ID  | CARDNUMBER                   | EXPMONTH | EXPYEAR | OWNERNAME |
 |-----|------------------------------|----------|---------|-----------|
