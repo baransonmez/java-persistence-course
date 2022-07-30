@@ -14,13 +14,16 @@
         <property name="show_sql">true</property>
         <!--  Drop and re-create the database schema on startup  -->
         <property name="hbm2ddl.auto">create-drop</property>
-        <mapping class="singletable.BillingDetails"/>
-        <mapping class="singletable.BankAccount"/>
-        <mapping class="singletable.CreditCard"/>
+        <!--        <mapping class="singletable.BillingDetails"/>-->
+        <!--        <mapping class="singletable.BankAccount"/>-->
+        <!--        <mapping class="singletable.CreditCard"/>-->
 
-<!--        <mapping class="mappedsuperclass.BillingDetails"/>-->
-<!--        <mapping class="mappedsuperclass.BankAccount"/>-->
-<!--        <mapping class="mappedsuperclass.CreditCard"/>-->
+        <!--        <mapping class="mappedsuperclass.BillingDetails"/>-->
+        <!--        <mapping class="mappedsuperclass.BankAccount"/>-->
+        <!--        <mapping class="mappedsuperclass.CreditCard"/>-->
 
+        <mapping class="joined.BillingDetails"/>
+        <mapping class="joined.BankAccount"/>
+        <mapping class="joined.CreditCard"/>
     </session-factory>
 </hibernate-configuration>
