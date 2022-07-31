@@ -22,8 +22,12 @@
         <!--        <mapping class="mappedsuperclass.BankAccount"/>-->
         <!--        <mapping class="mappedsuperclass.CreditCard"/>-->
 
-        <mapping class="joined.BillingDetails"/>
-        <mapping class="joined.BankAccount"/>
-        <mapping class="joined.CreditCard"/>
+        <!--        <mapping class="joined.BillingDetails"/>-->
+        <!--        <mapping class="joined.BankAccount"/>-->
+        <!--        <mapping class="joined.CreditCard"/>-->
+
+        <mapping class="tableperclass.BillingDetails"/>
+        <mapping class="tableperclass.BankAccount"/>
+        <mapping class="tableperclass.CreditCard"/>
     </session-factory>
 </hibernate-configuration>
